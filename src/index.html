@@ -7,7 +7,67 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="root"></div>
+    <!--Contenedor principal-->
+    <div class="page" id="root">
+      <!--Contenedor del título y elementos de navegación-->
+      <header class="header">
+        <!--Contenedor navegación (A implementar hito 2)-->
+        <nav class="nav">
+        </nav>
+        <h1 class="header__title">Trivias de K-Dramas</h1>
+      </header>
+      <main>
+        <!--Contenedor de trivias-->
+        <div class="container">
+          <section class="cuestionario" id="p1">
+          <!--Trivia 1-->
+            <h3 class="cuestionario__titulo">¿Qué preguntó la protagonista en el 
+              drama Weightlifting fairy Kim Book Joon para conocer a un chico?</h3>
+            <label>
+              <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">¿Te gusta Messi?
+            </label>
+            <label>
+              <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">¿Cuál es tu color favorito?
+            </label>
+            <label>
+              <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">¿Quieres ir por un helado?
+            </label>
+          </section>
+          <!--Trivia 2-->
+          <section class="cuestionario" id="p2">
+            <h3 class="cuestionario__titulo">¿Cómo se llama el drama en el que un hombre se hace pasar por gay por cuestiones laborales?</h3>
+            <label>
+              <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Strong woman Do Bong Soon
+            </label>
+            <label>
+              <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Personal taste
+            </label>
+            <label>
+              <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Go Back Couple
+            </label>
+          </section>
+          <!--Trivia 3-->
+          <section class="cuestionario" id="p3">
+            <h3 class="cuestionario__titulo">¿Quién NO ha sido pareja de Park Shin Hye en un Kdrama?</h3>
+            <label>
+              <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">Hyun Bin
+            </label>
+            <label>
+              <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Kim Woo Bin
+            </label>
+            <label>
+              <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">Lee Jong Suk
+            </label>
+          </section>
+          <!--Botones finales-->
+          <button class="boton2" type="submit">Resultados</button>
+          <h2>Cantidad acertadas: <span id="resultado"></span></h2>
+        </div>
+        <footer>
+          <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
+        </footer>
+      </main>  
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
