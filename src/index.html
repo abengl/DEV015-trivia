@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia de Kdramas</title>
+    <meta name="author" content="Fatima&Alessandra" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--Contenedor principal-->
@@ -12,61 +13,180 @@
       <!--Contenedor del título y elementos de navegación-->
       <header class="header">
         <!--Contenedor navegación (A implementar hito 2)-->
-        <nav class="nav">
-        </nav>
+
         <h1 class="header__title">Trivias de K-Dramas</h1>
+        <p class="header__description">
+          ¡Te damos la bienvenida a nuestra trivia de Kdramas! demuestranos
+          cuanto sabes de los doramas coreanos y que tan fan eres.
+        </p>
+
+        <!--SALUDO. Aquí voy a crear un elemento input para que la usuaria ingrese su nombre.
+        -label brinda el texto con la indicación para poner el nombre
+        -input es el campo donde se ingresa el nombre
+        -button es el botón para enviar el nombre, al hacer click va a llamar la función saludo definida en el archivo js.
+        -p es el párrafo donde se va a mostrar el saludo con el nombre de la usuaria luego de hacer click
+        -Usamos las clases asignarle una etiqueta personal a cada elemento
+        -->
+        <nav class="nav">
+          <div class="header__saludo">
+            <label class="saludo__label" for="username"
+              >¡Ingresa tu nombre aquí!:</label
+            >
+            <input
+              class="saludo__input"
+              type="text"
+              id="username"
+              placeholder="Mi nombre"
+              required
+            />
+            <button class="saludo__button" onclick="saludo()">
+              Comencemos
+            </button>
+          </div>
+          <div class="header__bienvenida">
+            <p class="saludo__bienvenida" id="saludo"></p>
+          </div>
+        </nav>
+        <!--Fin de la sección saludo-->
+        <!--Imagen ilustrativa-->
+        <img
+          class="header__image"
+          src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/8d0cf829-3c66-4191-a454-94e3585c6284_alta-aspect-ratio_default_0.jpg?v=1710865680410"
+          alt="Palacio histórico Gyeongbokgung rodeado con árboles de cerezo"
+        />
+        <!--Fin Imagen-->
       </header>
-      <main>
-        <!--Contenedor de trivias-->
-        <div class="container">
-          <section class="cuestionario" id="p1">
-          <!--Trivia 1-->
-            <h3 class="cuestionario__titulo">¿Qué preguntó la protagonista en el 
-              drama Weightlifting fairy Kim Book Joon para conocer a un chico?</h3>
-            <label>
-              <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">¿Te gusta Messi?
+      <!--Contenedor principal de la trivia-->
+      <main class="content">
+        <!--Inicio Cuestionario-->
+        <form class="tarjeta cuestionario__tarjeta" id="form">
+          <!--tarjeta es el bloque y lo que viene despues seran los elementos-->
+          <!--Pregunta 1-->
+          <section class="tarjeta__cuestionario">
+            <h3 class="tarjeta__pregunta">
+              ¿Qué preguntó la protagonista en el drama Weightlifting fairy Kim
+              Book Joon para conocer a un chico?
+            </h3>
+            <label class="tarjeta__alternativa" for="p1-1">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="1"
+                name="p1"
+                id="p1-1"
+                required
+              />¿Te gusta Messi?
             </label>
-            <label>
-              <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">¿Cuál es tu color favorito?
+            <label class="tarjeta__alternativa" for="p1-2">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="2"
+                name="p1"
+                id="p1-2"
+                required
+              />¿Qué hora tienes?
             </label>
-            <label>
-              <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">¿Quieres ir por un helado?
+            <label class="tarjeta__alternativa" for="p1-3">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="3"
+                name="p1"
+                id="p1-3"
+                required
+              />¿Cuál es tu color favorito?
             </label>
           </section>
-          <!--Trivia 2-->
-          <section class="cuestionario" id="p2">
-            <h3 class="cuestionario__titulo">¿Cómo se llama el drama en el que un hombre se hace pasar por gay por cuestiones laborales?</h3>
-            <label>
-              <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">Strong woman Do Bong Soon
+          <!--Pregunta 2-->
+          <section class="tarjeta__cuestionario">
+            <h3 class="tarjeta__pregunta">
+              ¿Cómo se llama el drama en el que un hombre se hace pasar por gay
+              por cuestiones laborales?
+            </h3>
+            <label class="tarjeta__alternativa" for="p2-1">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="1"
+                name="p2"
+                id="p2-1"
+                required
+              />Strong woman Do Bong Soon
             </label>
-            <label>
-              <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">Personal taste
+            <label class="tarjeta__alternativa" for="p2-2">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="2"
+                name="p2"
+                id="p2-2"
+                required
+              />Personal Taste
             </label>
-            <label>
-              <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">Go Back Couple
+            <label class="tarjeta__alternativa" for="p2-3">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="3"
+                name="p2"
+                id="p2-3"
+                required
+              />Go Back Couple
             </label>
           </section>
-          <!--Trivia 3-->
-          <section class="cuestionario" id="p3">
-            <h3 class="cuestionario__titulo">¿Quién NO ha sido pareja de Park Shin Hye en un Kdrama?</h3>
-            <label>
-              <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">Hyun Bin
+          <!--Pregunta 3-->
+          <section class="tarjeta__cuestionario">
+            <h3 class="tarjeta__pregunta">
+              ¿Quién NO ha sido pareja de Park Shin Hye en un Kdrama?
+            </h3>
+            <label class="tarjeta__alternativa" for="p3-1">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="1"
+                name="p3"
+                id="p3-1"
+                required
+              />Park Hyung Sik
             </label>
-            <label>
-              <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">Kim Woo Bin
+            <label class="tarjeta__alternativa" for="p3-2">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="2"
+                name="p3"
+                id="p3-2"
+                required
+              />Hyun Bin
             </label>
-            <label>
-              <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">Lee Jong Suk
+            <label class="tarjeta__alternativa" for="p3-3">
+              <input
+                class="tarjeta__input"
+                type="radio"
+                value="3"
+                name="p3"
+                id="p3-3"
+                required
+              />Kim Woo Bin
             </label>
           </section>
-          <!--Botones finales-->
-          <button class="boton2" type="submit">Resultados</button>
-          <h2>Cantidad acertadas: <span id="resultado"></span></h2>
+          <button
+            class="cuestionario__button"
+            type="submit"
+            onclick="validarRespuestas(event)"
+          >
+            Enviar
+          </button>
+        </form>
+        <div class="cuestionario__resultado" id="resultado">
+          <h2 class="resultado__title">Resultados</h2>
+          <p class="resultado__conteo" id="conteo"></p>
         </div>
-        <footer>
-          <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
-        </footer>
-      </main>  
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
+      </footer>
     </div>
     <script src="main.js"></script>
   </body>

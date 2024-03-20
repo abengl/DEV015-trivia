@@ -1,69 +1,205 @@
-/*To reset the padding and margin of the page*/
-/*https://stackoverflow.com/questions/30208335/removing-body-margin-in-css*/
-*{
+/*Primero restablecemos los valores inciales que tienen los elementos HTML al aplicar el estilo CSS de forma global con el asterisco.
+Tomé como referencia este artículo https://stackoverflow.com/questions/30208335/removing-body-margin-in-css*/
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
-  background-color: #961eff71;
-  font-family: Arial, sans-serif;
-  color: #333;
+/*Ahora voy a aplicar estilos básicos como color, fuente y tamaño de letra a los elementos HTML bloque por bloque desde los elementos más grandes hacia los más pequeños*/
+.page {
+  margin: auto;
+  font-family: "Inter", arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  /* Al definir valores estáticos para el contenedor principal se fija el tamaño de los demás elementos, por lo que al aumentar 
+  o disminuir (zoom) los demás elementos no se ajustan a este cambio
+  max-height: 1600px;
+  min-width: 1100px;
+  max-width: 1600px;
+  */
+  background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
-header{
-  background: #333;
-  color: #fff;
-  padding: 10px 0;
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 30%; /*Modifiqué a un valor relativo para que no se sobreponga la imagen sobre las tarjetas*/
+  width: 100%;
+  padding: 30px 80px 40px;
+  position: relative;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.header__title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 729px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.6px;
+  color: black;
+}
+
+.header__description {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 683px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
   text-align: center;
 }
 
-.container{
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-  padding: 10px;
-}
-
-.cuestionario{
-  background: #f4f4f4;
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.nav {
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
 }
 
-.cuestionario__titulo{
-  padding-bottom: 10px;
+/*Aquí voy a aplicar estilos a los elementos al contenedor del saludo. Uso el tipo de display como flex ya que quiero que los tres elementos contenidos vayan en una misma fila */
+.header__saludo {
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-label{
-  display: block;
-  padding: 10px 5px;
+.saludo__label {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
 }
 
-input{
-  margin: 5px;
-}
-
-.boton2{
+.saludo__input {
   padding: 10px 20px;
-  background: #333;
-  color: #fff;
+  margin: 5px;
+  border: none;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.saludo__button {
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin: 5px;
   border: none;
   cursor: pointer;
 }
 
-footer{
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
+.header__bienvenida {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.saludo__bienvenida {
+  padding: 20px 0;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.header__image {
+  max-width: 80%; /* La imagen nunca será más ancha que su contenedor */
+  margin-bottom: 20px; /* Ajusta según sea necesario para proporcionar suficiente espacio */
+}
+
+.content {
+}
+
+.tarjeta {
+}
+
+.cuestionario__tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  gap: 20px;
+}
+
+.tarjeta__cuestionario {
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e5e2e2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.tarjeta__pregunta {
+}
+
+.tarjeta__alternativa {
+}
+
+.tarjeta__input {
+}
+
+.cuestionario__button {
+  height: 60px;
+  margin-bottom: 32px;
+  background-color: #961eff;
+  color: white;
+  width: 385px;
+  border-radius: 4px;
+  opacity: 1;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.cuestionario__button:hover {
+  opacity: 0.7;
+}
+
+.cuestionario__resultado {
+  padding: 20px 0;
+  margin: 0;
+  font-size: 30px;
+  font-style: italic;
+  background-color: #333333;
+  color: white;
+}
+
+.resultado__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.resultado__conteo {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer {
+  color: #000000;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.footer__copyright {
+  margin: 0;
+  padding-top: 18px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-basis: 1000px; /*permite establecer la dimensión de un elemento a lo largo del eje principal en píxeles.*/
+  justify-content: center;
+  position: relative;
 }
