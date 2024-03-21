@@ -1,85 +1,109 @@
-// Accede al elemento parrafo para asignarle a una variable
+/*** 1. SALUDO ***/
+/* Este bloque de código detalla cómo obtener el nombre de la usuaria de la memoria del navegador (local storage) para usarlo en esta vista y saludar a la usuaria */
+
+// Accede al elemento parrafo y asignalo a una variable
 const saludo = document.getElementById("saludo");
 
+// Accede a la memoria del navegador para obtener el nombre
 const username = localStorage.getItem("username");
 
 // Inserta el nombre de la usuaria en el elemento parrafo
-saludo.innerHTML = `Hola ${username}! `;
+saludo.textContent = "Hola " + username;
 
-/*--------------------------------------------------------------------*/
 
-/* En esta sección se desarrolla la función para validar las respuestas correctas */
+/*** 2. FUNCION CONTEO DE REPUESTAS ***/
+/* En esta sección se desarrolla la función para contar el número de aciertos y mostrar el resultado acertado en la pantalla.
+La función toma el parametro event ya que el boton de tipo submit genera un evento*/
 
-// Arreglo que contiene las repsuestas correctas
-const respuestasCorrectas = ["1", "1", "3"];
-
-// Obtenemos el elemento formulario para luego sacar las respuestas de la usuaria
-const form = document.getElementById("form");
-
-// Creamos una función para obtener las respuestas de la usuaria y comparar sus resultados
-// La función toma el parametro event ya que el boton de tipo submit genera un evento
 function conteoRespuestas(event) {
-    // Prevenimos que el navegador aplique acciones default luego del envío del formulario,
-    // en este caso, lo normal sería que refresque la página, pero no es lo que queremos
-    // ya que seguiremos con otro proceso. Esto es un estandard
+
+    /* Prevenimos que el navegador aplique acciones default luego del envío del formulario, en este caso, lo normal sería que refresque la página, pero no es lo que queremos ya que seguiremos con otro proceso. Esto es un estandard */
     event.preventDefault();
 
-    // Accedemos a las respuestas de la usuaria del formulario
-    // Se usa queryselector para acceder elementos en base a sus atributos no únicos
+    /* Accedemos a las respuestas de la usuaria del formulario. Se usa queryselector para acceder elementos en base a sus atributos no únicos */
     const p1Respuesta = document.querySelector('input[name="p1"]:checked').value;
     const p2Respuesta = document.querySelector('input[name="p2"]:checked').value;
     const p3Respuesta = document.querySelector('input[name="p3"]:checked').value;
 
-    // variable para contar las respuestas correctas
+    // Variable para contar las respuestas correctas
     let countRespuestasCorrectas = 0;
 
-    const resultado1 = "";
-    const resultado2 = "";
-    const resultado3 = "";
-
-    // Comparamos las respuesta de la usuaria con las respuestas correctas
-    if (p1Respuesta === respuestasCorrectas[0]) {
+    // Comparamos las respuesta de la usuaria con las respuestas correctas. 1 representa una respuesta correcta y 0 incorrecta. Si la respuesta es correcta, sumamos 1 al contador.
+    if (p1Respuesta === "1") {
         countRespuestasCorrectas++;
-        resultado1 = validarResultado(true, 0);
     }
-    if (p2Respuesta === respuestasCorrectas[1]) {
+    if (p2Respuesta === "1") {
         countRespuestasCorrectas++;
-        resultado2 = validarResultado(true, 1);
     }
-    if (p3Respuesta === respuestasCorrectas[2]) {
+    if (p3Respuesta === "1") {
         countRespuestasCorrectas++;
-        resultado3 = validarResultado(true, 2);
     }
 
-    // Creamos una variables que bote los aciertos del conteo
+    // Accede al elemento parrafo y asignalo a una variable
     const aciertosConteo = document.getElementById("conteo");
 
-    const p1resultado = document.getElementById("resultado2");
-    const p2resultado = document.getElementById("resultado2");
-    const p3resultado = document.getElementById("resultado3");
+    // Llamamos a la función validarResultado para mostrar las respuestas correctas/incorrectas debajo de cada sección de pregunta
+    validarResultado();
 
-    aciertosConteo.innerHTML = `Puntaje final: ${countRespuestasCorrectas}`;
-
-    p1resultado.innerHTML = resultado1;
-    p2resultado.innerHTML = resultado2;
-    p3resultado.innerHTML = resultado3;
-
+    // Inserta el número de respuestas correctas en el elemento parrafo
+    aciertosConteo.textContent = "Puntaje final: " + countRespuestasCorrectas;
 }
 
-function validarResultado(estado, pregunta) {
+
+/*** 3. FUNCION VALIDAR RESPUESTAS CORRECTAS ***/
+/* En esta sección se desarrolla la función para validar las respuestas correctas de la usuaria y mostrar los resultados al final de cada sección de preguntas */
+
+function validarResultado() {
+
+    // Arreglo que contiene las repsuestas correctas como texto
     const respuestasCorrectasTexto = [
         "¿Te gusta Messi?",
         "Strong woman Do Bong Soon",
-        "Kim Woo Bin"
+        "Kim Woo Bin",
     ];
 
-    let resultado = "";
+    // Accedemos a las respuestas de la usuaria del formulario. Se usa queryselector para acceder elementos en base a sus atributos no únicos. 
+    const p1Respuesta = document.querySelector('input[name="p1"]:checked').value;
+    const p2Respuesta = document.querySelector('input[name="p2"]:checked').value;
+    const p3Respuesta = document.querySelector('input[name="p3"]:checked').value;
 
-    if (estado) {
-        resultado = "Correcto! La respuesta es: " + respuestasCorrectasTexto[pregunta];
+    // Creamos variables que mostrarán mensajes indicando respuestas correctas/incorrectas
+    let mensajeTrivia1 = "";
+    let mensajeTrivia2 = "";
+    let mensajeTrivia3 = "";
+
+    // Comparamos las respuesta de la usuaria. Primero si es correcta, mostramos un mensaje de correcto, si no, mostramos la respuesta correcta sacándola del arreglo
+    if (p1Respuesta === "1") {
+        mensajeTrivia1 = "Correcto!";
     } else {
-        resultado = "Incorrecto! La respuesta es: " + respuestasCorrectasTexto[pregunta];
+        mensajeTrivia1 = "Incorrecto! La respuesta es " + respuestasCorrectasTexto[0];
+    }
+    if (p2Respuesta === "1") {
+        mensajeTrivia2 = "Correcto!";
+    } else {
+        mensajeTrivia2 = "Incorrecto! La respuesta es " + respuestasCorrectasTexto[1];
+    }
+    if (p3Respuesta === "1") {
+        mensajeTrivia3 = "Correcto!";
+    } else {
+        mensajeTrivia3 = "Incorrecto! La respuesta es " + respuestasCorrectasTexto[2];
     }
 
-    return resultado;
+    // Accede al elemento parrafo y asignalo a una variable
+    const resultado1 = document.getElementById("resultado1");
+    const resultado2 = document.getElementById("resultado2");
+    const resultado3 = document.getElementById("resultado3");
+
+    // Inserta el número de respuestas correctas en el elemento parrafo
+    resultado1.textContent = mensajeTrivia1;
+    resultado2.textContent = mensajeTrivia2;
+    resultado3.textContent = mensajeTrivia3;
+}
+
+/*** 4. FUNCION RESETEAR TRIVIA ***/
+/* En esta sección se desarrolla la función para resetear la trivia y volver al inicio */
+
+function resetTrivia() {
+    // Navegamos a la página index al actualizar la ubicación actual de la página con la propiedad href
+    window.location.href = "index.html";
 }

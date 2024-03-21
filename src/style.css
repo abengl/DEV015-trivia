@@ -1,38 +1,33 @@
-/*Primero restablecemos los valores inciales que tienen los elementos HTML al aplicar el estilo CSS de forma global con el asterisco.
-Tomé como referencia este artículo https://stackoverflow.com/questions/30208335/removing-body-margin-in-css*/
+/* Primero restablecemos los valores inciales que tienen los elementos HTML al aplicar el estilo CSS de forma global con el asterisco */
 * {
   margin: 0;
   padding: 0;
 }
 
-/*Ahora voy a aplicar estilos básicos como color, fuente y tamaño de letra a los elementos HTML bloque por bloque desde los elementos más grandes hacia los más pequeños*/
+/* Contenedor principal */
 .page {
   margin: auto;
   font-family: "Inter", arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: black;
-  /* Al definir valores estáticos para el contenedor principal se fija el tamaño de los demás elementos, por lo que al aumentar 
-  o disminuir (zoom) los demás elementos no se ajustan a este cambio
-  max-height: 1600px;
-  min-width: 1100px;
-  max-width: 1600px;
-  */
   background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
+/* Contenedor header */
 .header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 30%; /*Modifiqué a un valor relativo para que no se sobreponga la imagen sobre las tarjetas*/
+  height: 30%;
   width: 100%;
-  padding: 30px 80px 40px;
+  padding: 30px 80px 10px;
   position: relative;
   box-sizing: border-box;
   color: #000000;
 }
 
+/* Título de la página */
 .header__title {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -40,11 +35,12 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   font-style: normal;
   font-weight: 500;
   font-size: 60px;
-  line-height: 72px;
+  line-height: 72px; /*altura de la línea*/
   letter-spacing: -0.6px;
   color: black;
 }
 
+/* Descripción de la web (vista 2)*/
 .header__description {
   margin: auto;
   display: flex;
@@ -64,7 +60,7 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   flex-direction: column;
 }
 
-/*Aquí voy a aplicar estilos a los elementos al contenedor del saludo. Uso el tipo de display como flex ya que quiero que los tres elementos contenidos vayan en una misma fila */
+/* Contenedor del input y botón de saludo (vista 1) */
 .header__saludo {
   padding: 20px 0;
   text-align: center;
@@ -72,12 +68,14 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   justify-content: center;
 }
 
+/* Etiqueta del input */
 .saludo__label {
   display: flex;
   justify-content: center;
   margin-top: 12px;
 }
 
+/* Input (vista 1) */
 .saludo__input {
   padding: 10px 20px;
   margin: 5px;
@@ -86,6 +84,7 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   width: 200px;
 }
 
+/* Botón de input (vista 1) */
 .saludo__button {
   border-radius: 12px;
   padding: 10px 20px;
@@ -94,39 +93,48 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   cursor: pointer;
 }
 
+/* Saludo de bienvenida usuaria (vista 2) */
 .header__bienvenida {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-size: 50px;
+  padding: 20px;
 }
 
+/* No existe esta clase
 .saludo__bienvenida {
   padding: 20px 0;
   font-size: 30px;
   font-style: italic;
 }
+*/
 
+/* Imagen de la web (vista 1*/
 .header__image {
-  max-width: 80%; /* La imagen nunca será más ancha que su contenedor */
-  margin-bottom: 20px; /* Ajusta según sea necesario para proporcionar suficiente espacio */
+  max-width: 80%; 
+  margin-bottom: 20px; 
 }
 
+/*
 .content {
 }
+*/
 
-.tarjeta {
-}
-
-.cuestionario__tarjeta {
+/*Form contiene las secciones del cuestionario(vista 2)*/
+.content__tarjeta {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /*Para que las tarjetas figuren horizontalmente */
+  gap: 30px;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
+/*Secciones*/
 .tarjeta__cuestionario {
-  width: 50%;
+  height: 450px;
   padding: 20px;
   border-radius: 10px;
   background-color: #e5e2e2;
@@ -134,24 +142,53 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 10px;
+  flex-basis: 25%; /*Para que entren las 3 tarjetas y los botones abajo*/
+  justify-content: space-between;
 }
 
+.tarjeta__image {
+  max-width: 100%;
+  height: 60%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/*
 .tarjeta__pregunta {
 }
+*/
 
+/*
 .tarjeta__alternativa {
 }
+*/
 
 .tarjeta__input {
+  margin-right: 10px;
+}
+
+.tarjeta__resultado {
+  gap: 20px;
+  color: #7e6aac;
+  font-weight: bold;
+  padding: 5 10px;
+}
+
+/*Contenedor de botones*/
+.cuestionario__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
 .cuestionario__button {
   height: 60px;
   margin-bottom: 32px;
-  background-color: #961eff;
-  color: white;
-  width: 385px;
+  background-color: #b695c0;
+  color: black;
+  width: 270px;
   border-radius: 4px;
   opacity: 1;
   font-style: normal;
@@ -165,6 +202,26 @@ Tomé como referencia este artículo https://stackoverflow.com/questions/3020833
   opacity: 0.7;
 }
 
+.cuestionario__reset {
+  height: 60px;
+  margin-bottom: 32px;
+  background-color: black;
+  color: white;
+  width: 270px;
+  border-radius: 4px;
+  opacity: 1;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.cuestionario__reset:hover {
+  opacity: 0.7;
+}
+
+/* Contenedor de resultado de aciertos (vista 2) */
 .cuestionario__resultado {
   padding: 20px 0;
   margin: 0;

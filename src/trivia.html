@@ -10,9 +10,8 @@
   <body>
     <!--Contenedor principal-->
     <div class="page" id="root">
-      <!--Contenedor del título y elementos de navegación-->
+      <!--Contenedor header-->
       <header class="header">
-        <!--Contenedor navegación (A implementar hito 2)-->
         <h1 class="header__title">Trivias de K-Dramas</h1>
         <p class="header__bienvenida" id="saludo"></p>
         <p class="header__description">
@@ -20,15 +19,19 @@
           cuanto sabes de los doramas coreanos y que tan fan eres.
         </p>
       </header>
-      <!--Contenedor principal de la trivia-->
+      <!--Contenedor de la trivia-->
       <main class="content">
-        <!--Inicio Cuestionario-->
-        <form class="tarjeta cuestionario__tarjeta" id="form">
-          <!--tarjeta es el bloque y lo que viene despues seran los elementos-->
-          <!--Pregunta 1-->
+        <!--Form del Cuestionario-->
+        <form class="content__tarjeta" id="form">
+          <!--PREGUNTA 1-->
           <section class="tarjeta__cuestionario">
+            <img
+              class="tarjeta__image"
+              src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/pregunta1.jpg?v=1710964363961"
+              alt="Kdrama Weightlifting fairy Kim Book Joon"
+            />
             <h3 class="tarjeta__pregunta">
-              ¿Qué preguntó la protagonista en el drama Weightlifting fairy Kim
+              ¿Qué preguntó la protagonista de Weightlifting fairy Kim
               Book Joon para conocer a un chico?
             </h3>
             <label class="tarjeta__alternativa" for="p1-1">
@@ -45,7 +48,7 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="2"
+                value="0"
                 name="p1"
                 id="p1-2"
                 required
@@ -55,7 +58,7 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="3"
+                value="0"
                 name="p1"
                 id="p1-3"
                 required
@@ -63,8 +66,13 @@
             </label>
             <p class="tarjeta__resultado" id="resultado1"></p>
           </section>
-          <!--Pregunta 2-->
+          <!--PREGUNTA 2-->
           <section class="tarjeta__cuestionario">
+            <img
+              class="tarjeta__image"
+              src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/pregunta2.png?v=1710964360803"
+              alt="Kdrama Strong Woman Do Bong Soon"
+            />
             <h3 class="tarjeta__pregunta">
               ¿Cómo se llama el drama en el que un hombre se hace pasar por gay
               por cuestiones laborales?
@@ -83,17 +91,17 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="2"
+                value="0"
                 name="p2"
                 id="p2-2"
                 required
-              />Personal Taste
+              />My Love from the Star
             </label>
             <label class="tarjeta__alternativa" for="p2-3">
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="3"
+                value="0"
                 name="p2"
                 id="p2-3"
                 required
@@ -101,8 +109,13 @@
             </label>
             <p class="tarjeta__resultado" id="resultado2"></p>
           </section>
-          <!--Pregunta 3-->
+          <!--PREGUNTA 3-->
           <section class="tarjeta__cuestionario">
+            <img
+              class="tarjeta__image"
+              src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/pregunta3.jpg?v=1710964357505"
+              alt="Actriz Park Shin Hye"
+            />
             <h3 class="tarjeta__pregunta">
               ¿Quién NO ha sido pareja de Park Shin Hye en un Kdrama?
             </h3>
@@ -110,7 +123,7 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="1"
+                value="0"
                 name="p3"
                 id="p3-1"
                 required
@@ -120,7 +133,7 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="2"
+                value="0"
                 name="p3"
                 id="p3-2"
                 required
@@ -130,7 +143,7 @@
               <input
                 class="tarjeta__input"
                 type="radio"
-                value="3"
+                value="1"
                 name="p3"
                 id="p3-3"
                 required
@@ -138,23 +151,38 @@
             </label>
             <p class="tarjeta__resultado" id="resultado3"></p>
           </section>
-          <button
-            class="cuestionario__button"
-            type="submit"
-            onclick="conteoRespuestas(event)"
-          >
-            Enviar
-          </button>
+          <!--Contenedor de botones-->
+          <div class="cuestionario__buttons">
+            <button
+              class="cuestionario__button"
+              type="submit"
+              onclick="conteoRespuestas(event)"
+            >
+              Enviar
+            </button>
+            <button
+              class="cuestionario__reset"
+              type="reset"
+              onclick="resetTrivia(event)"
+            >
+              Volver a Jugar
+            </button>
+          </div>
         </form>
+        <!--Fin form de cuestionario-->
+        <!--Contenedor de resultados-->
         <div class="cuestionario__resultado" id="resultado">
           <h2 class="resultado__title">Resultados</h2>
           <p class="resultado__conteo" id="conteo"></p>
         </div>
       </main>
+      <!--Fin Contenedor de la trivia-->
+      <!--Footer-->
       <footer class="footer">
         <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
       </footer>
     </div>
+    <!--Fin contenedor principal-->
     <script src="trivia.js"></script>
   </body>
 </html>
