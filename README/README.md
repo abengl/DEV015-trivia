@@ -28,10 +28,12 @@ permita ver los resultados. También incluímos un bosquejo de la estructura HTM
 ![Prototipo](https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/ca2e98e2-63d5-4938-930d-6ca1dca73361.image.png?v=1710864190471)
 
 ### 2.4 Estilo
+
 Elegimos usar el color lila y una paleta similar para nuestros colores de la web. Básicamente con una tonalidad ligera e incluir
 imágenes relacionadas con nuestra trivia.
 
 ### 2.5 Metodología
+
 Decidimos seguir las recomendaciones de los hitos ya que nos permite ir incrementando el nivel de complejidad del proyecto
 así como ir añadiendo nuevos features a medida que vamos dominando un concepto nuevo. Usamos la metodología Scrum
 para organizar nuestro proyecto inicialmente en **Documento Docs** [Documentación](https://docs.google.com/document/d/1xtxzLLFupz_BHFi5uC_Qn85S-TlXVQYcwK01z9ZYaxg/edit?usp=sharing)
@@ -40,10 +42,12 @@ y ya finalmente en este README.md
 ---
 
 ## 3. Hito 1
+
 Nuestro objetivo inicial fue realizar solo el hito 1, para lo cual nos propusimos leer los materiales propuestos y
 buscar otros recursos como tutoriales y/o preguntar en slack.
 
 ##### Objetivos
+
 ✅ Crear 1 sola pantalla o vista.
 
 ✅ 3 preguntas con 3 alternativas de respuesta (botones de radio) cada una.
@@ -57,14 +61,15 @@ buscar otros recursos como tutoriales y/o preguntar en slack.
 ##### Reflexiones
 
 - Iniciamos en nuestro index.html armando la estructura con HTML semántico. También colocamos nombres de
-clase a los elementos HTML para poder identificarlos con facilidad al momento de aplicar estilos. Creamos
-las secciones de preguntas con el elemento section y añadimos un botón para ver los resultados.
+  clase a los elementos HTML para poder identificarlos con facilidad al momento de aplicar estilos. Creamos
+  las secciones de preguntas con el elemento section y añadimos un botón para ver los resultados.
 - Al finalizar, nos dimos cuenta que ya habíamos avanzado más de lo que nos propusimos
 - Nos falto poder hacer que el boton de ver resultados funcione, no sabiamoa como plantear la función en JS aún.
 
 ---
 
 ## 4. Hito 2
+
 En esta parte ya estabamos mas familiarizadas con el proyecto, por lo que nos planteamos en el dia 2 poder
 crear una función que cuente cuantas preguntas fueron correctas.
 Tambien se creo en el navegador la parte donde el usuario debe insertar su nombre y darle click en el botón
@@ -86,24 +91,26 @@ comencemos.
 ##### Reflexiones
 
 - En la parte de la interactividad, usamos funciones para asociarlas a los elementos botones de la
-web, así al hacer clic en un botón, la función específica en main.js se ejecuta. Allí aplicamos
-variables, selectores, eventos y if statement para lograr que el nombre de la usuaria y los
-resultados de la trivia (conteo) se muestren.
+  web, así al hacer clic en un botón, la función específica en main.js se ejecuta. Allí aplicamos
+  variables, selectores, eventos y if statement para lograr que el nombre de la usuaria y los
+  resultados de la trivia (conteo) se muestren.
 - Pulimos más con estilos y añadimos una imagen
 
 ---
 
 ## 5. Hito 3
+
 Para este hito tenemos pensado darle el diseño respectivo a la parte del texto y preguntas para que este ordenado.
 Nos propusimos hacer que el botón tengo un sombreado cuando se pase el cursor sobre el.
 Tambien dividiremos la página en dos vistas mediante funciones en js.
 
 ##### Objetivos
+
 ✅ Mensaje de alerta al no ingresar input en la vista 1.
 
 ✅ Crear una segunda vista separando la página de inicio de la trivia (vista 2).
 
-✅ El botón para responder muestra la alternativa correcta para cada pregunta y, además, muestra si cada una de las 
+✅ El botón para responder muestra la alternativa correcta para cada pregunta y, además, muestra si cada una de las
 respuestas fue correcta o incorrecta (vista 2).
 
 ✅ Un botón para volver a jugar que vuelve a la pantalla inicial en la que se pide el nombre (vista 2).
@@ -115,14 +122,16 @@ respuestas fue correcta o incorrecta (vista 2).
 ![Versión 3-Parte 3](https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/2024-03-20_21-27.png?v=1710988044378)
 
 ##### Reflexiones
+
 - Nos enfocamos en la funcionalidad de JS, creamos nuestra función para validar las respuestas de la usuaria,
-pero nos atascamos y esta no se ejecutaba. Contamos con la ayuda de la coach para revisar el código y determinar
-el problema, y hacer ajustes en los valores de nuestras respuestas.
+  pero nos atascamos y esta no se ejecutaba. Contamos con la ayuda de la coach para revisar el código y determinar
+  el problema, y hacer ajustes en los valores de nuestras respuestas.
 - Mejoramos el CSS de nuestra web, armonizando la paleta de colores, y cuadrando los elementos de la web.
 
 ---
 
 ## 6. Hito 4
+
 Ahora estamos revisando una vez más nuestro código para añadir los comentarios, verificar los elementos, sus clases,
 atributos, formatos. Decidimos dar los últimos ajustes de estilos.
 
@@ -130,9 +139,21 @@ atributos, formatos. Decidimos dar los últimos ajustes de estilos.
 
 ✅ Revisar código (coherencia, formato, comentarios)
 
-✅ Revisar estilos 
+✅ Revisar y ajustar estilos
+
+✅ Modificar imagen
 
 ##### Reflexiones
-- 
 
----
+- Editamos y pulimos nuestros estilos, elegimos un tipo de fuente estándar Lato, ajustamos los tamaños de los elementos,
+  cambiamos la imagen de inicio.
+
+- Modificamos algunos nombres de las clases para que sea de acuerdo al sentido de
+  la etiqueta puesta y el contenido del mismo
+
+- Por ultimo, agregamos algunos puntos ne la documentación y algunos comentarios, para que
+  sea entendible el codigo en cualquier lector o usuario que la use. 😊
+
+![Versión 4-Parte 1](https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/Screenshot%20from%202024-03-21%2011-35-59.png?v=1711039060147)
+![Versión 4-Parte 2](https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/Screenshot%20from%202024-03-21%2011-36-13.png?v=1711039030278)
+![Versión 4-Parte 3](https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/Screenshot%20from%202024-03-21%2011-36-31.png?v=1711039048599)

@@ -6,6 +6,12 @@
     <title>Trivia de Kdramas</title>
     <meta name="author" content="Fatima&Alessandra" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!--Contenedor principal-->
@@ -14,31 +20,34 @@
       <header class="header">
         <h1 class="header__title">Trivias de K-Dramas</h1>
         <nav class="nav">
-          <div class="header__saludo">
-            <label class="saludo__label" for="username"
-              >¡Ingresa tu nombre aquí!:</label
+          <div class="header__username">
+            <label class="username__label" for="username"
+              >¡Ingresa tu nombre aquí!</label
             >
             <input
-              class="saludo__input"
+              class="username__input"
               type="text"
               id="username"
               placeholder="Mi nombre"
               required
             />
-            <button class="saludo__button" onclick="validarNombre()">
+            <button class="username__button" onclick="validarNombre()">
               Comencemos
             </button>
           </div>
+          <h3 class="header__subtitle">
+            ¡Mucha suerte en el juego!
+          </h3>
         </nav>
-        <!--Fin de la sección saludo-->
-        <img
-          class="header__image"
-          src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/8d0cf829-3c66-4191-a454-94e3585c6284_alta-aspect-ratio_default_0.jpg?v=1710865680410"
-          alt="Palacio histórico Gyeongbokgung rodeado con árboles de cerezo"
-        />
       </header>
       <main class="content">
+        <img
+          class="content__image"
+          src="https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/Korean%20Palace.jpg?v=1711036216913"
+          alt="Palacio histórico Gyeongbokgung rodeado con árboles de cerezo"
+        />
         <!--Inicio Cuestionario-->
+        <!--Fin de la sección saludo-->
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
