@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor principal */
+  .page {
+    margin: auto;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: black;
+    background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  
+  /* Contenedor header */
+  .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+    padding: 30px 80px 10px;
+    position: relative;
+    box-sizing: border-box;
+    color: #000000;
+  }
+  
+  /* Título de la página */
+  .header__title {
+    margin-top: 20px;
+    max-width: 729px;
+    font-size: 60px;
+    line-height: 72px; /*altura de la línea*/
+    letter-spacing: -0.6px;
+    color: black;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* Descripción de la web */
+  .header__description {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 683px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Saludo de bienvenida usuaria */
+  .header__bienvenida {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 50px;
+    padding: 20px;
+  }
+  
+  .content {
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    Overflow:hidden;
+   
+  }
+  
+  /*Form contiene las secciones del cuestionario */
+  .content__tarjeta {
+    display: flex;
+    flex-direction: row; /*Para que las tarjetas figuren horizontalmente */
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  /*Secciones*/
+  .tarjeta__cuestionario {
+    height: 470px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e5e2e2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-basis: 25%; /*Para que entren las 3 tarjetas y los botones abajo*/
+    justify-content: space-between;
+  }
+  
+  .tarjeta__image {
+    max-width: 100%;
+    height: 60%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  
+  .tarjeta__pregunta {
+    padding: 10px 0;
+  }
+  
+  .tarjeta__alternativa {
+    padding: 5px 0;
+  }
+  
+  
+  .tarjeta__input {
+    margin-right: 10px;
+  }
+  
+  .tarjeta__resultado {
+    gap: 20px;
+    color: #7e6aac;
+    font-weight: bold;
+    padding: 5 10px;
+  }
+  
+  /*Contenedor de botones*/
+  .cuestionario__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .cuestionario__button {
+    height: 60px;
+    margin-bottom: 32px;
+    background-color: #b695c0;
+    color: black;
+    width: 270px;
+    border-radius: 4px;
+    opacity: 1;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  
+  .cuestionario__button:hover {
+    opacity: 0.7;
+  }
+  
+  .cuestionario__reset {
+    height: 60px;
+    margin-bottom: 32px;
+    background-color: black;
+    color: white;
+    width: 270px;
+    border-radius: 4px;
+    opacity: 1;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  
+  .cuestionario__reset:hover {
+    opacity: 0.7;
+  }
+  
+  /* Contenedor de resultado de aciertos (vista 2) */
+  .cuestionario__resultado {
+    padding: 20px 0;
+    margin: 0;
+    font-size: 30px;
+    font-style: italic;
+    background-color: #333333;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .resultado__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  
+  .resultado__conteo {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .footer {
+    color: #000000;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  
+  .footer__copyright {
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-basis: 1000px; /*permite establecer la dimensión de un elemento a lo largo del eje principal en píxeles.*/
+    justify-content: center;
+    position: relative;
+    min-height: 10%;
+  }

@@ -1,5 +1,4 @@
 /*** 1. SALUDO ***/
-/* Este bloque de código detalla cómo obtener el nombre de la usuaria de la memoria del navegador (local storage) para usarlo en esta vista y saludar a la usuaria */
 
 // Accede al elemento parrafo y asignalo a una variable
 const saludo = document.getElementById("saludo");
@@ -10,15 +9,15 @@ const username = localStorage.getItem("username");
 // Inserta el nombre de la usuaria en el elemento parrafo
 saludo.textContent = "Hola " + username;
 
+
 /*** 2. FUNCION CONTEO DE REPUESTAS ***/
-/* En esta sección se desarrolla la función para contar el número de aciertos y mostrar el resultado acertado en la pantalla.
-La función toma el parametro event ya que el boton de tipo submit genera un evento*/
+/* Función para contar el número de aciertos y mostrar el resultado acertado en la pantalla. Se usa el parametro event ya que el boton de tipo submit genera un evento*/
 
 function conteoRespuestas(event) {
-  /* Prevenimos que el navegador aplique acciones default luego del envío del formulario, en este caso, lo normal sería que refresque la página, pero no es lo que queremos ya que seguiremos con otro proceso. Esto es un estandard */
+  //Prevenimos que se actualice la página al presionar el botón de submit
   event.preventDefault();
 
-  /* Accedemos a las respuestas de la usuaria del formulario. Se usa queryselector para acceder elementos en base a sus atributos no únicos */
+  //Accedemos a las respuestas de la usuaria del formulario. Se usa queryselector para acceder elementos en base a sus atributos no únicos
   const p1Respuesta = document.querySelector('input[name="p1"]:checked').value;
   const p2Respuesta = document.querySelector('input[name="p2"]:checked').value;
   const p3Respuesta = document.querySelector('input[name="p3"]:checked').value;
@@ -47,8 +46,9 @@ function conteoRespuestas(event) {
   aciertosConteo.textContent = "Puntaje final: " + countRespuestasCorrectas;
 }
 
+
 /*** 3. FUNCION VALIDAR RESPUESTAS CORRECTAS ***/
-/* En esta sección se desarrolla la función para validar las respuestas correctas de la usuaria y mostrar los resultados al final de cada sección de preguntas */
+/* Función para validar las respuestas correctas de la usuaria y mostrar los resultados al final de cada sección de preguntas */
 
 function validarResultado() {
   // Arreglo que contiene las repsuestas correctas como texto
@@ -99,10 +99,12 @@ function validarResultado() {
   resultado3.textContent = mensajeTrivia3;
 }
 
+
 /*** 4. FUNCION RESETEAR TRIVIA ***/
-/* En esta sección se desarrolla la función para resetear la trivia y volver al inicio */
+/* Función para resetear la trivia y volver al inicio */
 
 function resetTrivia() {
   // Navegamos a la página index al actualizar la ubicación actual de la página con la propiedad href
-  window.location.href = "/DEV015-trivia/index.html";
+  //window.location.href = "/DEV015-trivia/index.html"; *GTIHUB*
+  window.location.href = "../index.html";
 }

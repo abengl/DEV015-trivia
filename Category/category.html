@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia de Kdramas</title>
+    <meta name="author" content="Fatima&Alessandra" />
+    <!--<link rel="stylesheet" href="/DEV015-trivia/style.css" /> *GITHUB*-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Contenedor principal-->
+    <div class="page" id="root">
+      <!--Contenedor header-->
+      <header class="header">
+        <h1 class="header__title">Trivias de K-Dramas</h1>
+        <p class="header__bienvenida" id="saludo"></p>
+        <p class="header__description">
+          ¡Te damos la bienvenida a nuestra trivia de K-Dramas! 
+          Selecciona una categoría para comenzar:
+        </p>
+      </header>
+      <!--Contenedor de categorías-->
+      <main class="content">
+        <section class="content__tarjeta">
+          <h2 class="tarjeta__titulo">Categorías</h2>
+          <div class="tarjeta__categorias">
+            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
+              K-Dramas
+            </button>
+            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
+              K-Pop
+            </button>
+            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
+              Cultura Coreana
+            </button>
+          </div>
+        </section>
+      </main>
+      <!--Fin Contenedor de la trivia-->
+      <!--Footer-->
+      <footer class="footer">
+        <p class="footer__copyright">&copy;2024 Fatima y Alessandra</p>
+      </footer>
+    </div>
+    <!--Fin contenedor principal-->
+    <!--<script src="/DEV015-trivia/Trivia/trivia.js"></script> *GITHUB*-->
+    <script src="trivia.js"></script>
+  </body>
+</html>

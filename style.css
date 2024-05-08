@@ -50,20 +50,6 @@
   color: black;
 }
 
-/* Descripción de la web (vista 2)*/
-.header__description {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  max-width: 683px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  font-style: italic;
-}
-
 .nav {
   display: flex;
   justify-content: center;
@@ -71,7 +57,7 @@
   flex-direction: column;
 }
 
-/* Contenedor del input para el username y botón de para comenzar (vista 1) */
+/* Contenedor del input para el username y botón de para comenzar */
 .header__username {
   margin:0;
   text-align: center;
@@ -86,7 +72,7 @@
   margin-top: 12px;
 }
 
-/* Input (vista 1) */
+/* Input */
 .username__input {
   padding: 10px 20px;
   margin: 5px;
@@ -95,22 +81,13 @@
   width: 200px;
 }
 
-/* Botón de input (vista 1) */
+/* Botón de input */
 .username__button {
   border-radius: 12px;
   padding: 10px 20px;
   margin: 5px;
   border: none;
   cursor: pointer;
-}
-
-/* Saludo de bienvenida usuaria (vista 2) */
-.header__bienvenida {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 50px;
-  padding: 20px;
 }
 
 .content {
@@ -123,136 +100,12 @@
  
 }
 
-/* Imagen de la web (vista 1)*/
+/* Imagen de la web */
 .content__image {
   width: 100%;
   height: 100vh;
   margin:0;
   object-fit:cover;
-}
-
-/*Form contiene las secciones del cuestionario(vista 2)*/
-.content__tarjeta {
-  display: flex;
-  flex-direction: row; /*Para que las tarjetas figuren horizontalmente */
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-/*Secciones*/
-.tarjeta__cuestionario {
-  height: 470px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #e5e2e2;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  flex-basis: 25%; /*Para que entren las 3 tarjetas y los botones abajo*/
-  justify-content: space-between;
-}
-
-.tarjeta__image {
-  max-width: 100%;
-  height: 60%;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-
-.tarjeta__pregunta {
-  padding: 10px 0;
-}
-
-.tarjeta__alternativa {
-  padding: 5px 0;
-}
-
-
-.tarjeta__input {
-  margin-right: 10px;
-}
-
-.tarjeta__resultado {
-  gap: 20px;
-  color: #7e6aac;
-  font-weight: bold;
-  padding: 5 10px;
-}
-
-/*Contenedor de botones*/
-.cuestionario__buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.cuestionario__button {
-  height: 60px;
-  margin-bottom: 32px;
-  background-color: #b695c0;
-  color: black;
-  width: 270px;
-  border-radius: 4px;
-  opacity: 1;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 20px;
-  cursor: pointer;
-}
-
-.cuestionario__button:hover {
-  opacity: 0.7;
-}
-
-.cuestionario__reset {
-  height: 60px;
-  margin-bottom: 32px;
-  background-color: black;
-  color: white;
-  width: 270px;
-  border-radius: 4px;
-  opacity: 1;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 20px;
-  cursor: pointer;
-}
-
-.cuestionario__reset:hover {
-  opacity: 0.7;
-}
-
-/* Contenedor de resultado de aciertos (vista 2) */
-.cuestionario__resultado {
-  padding: 20px 0;
-  margin: 0;
-  font-size: 30px;
-  font-style: italic;
-  background-color: #333333;
-  color: white;
-  width: 100%;
-  height: 100%;
-}
-
-.resultado__title {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
-}
-
-.resultado__conteo {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
 }
 
 .footer {
