@@ -3,8 +3,14 @@
     padding: 0;
   }
   
+html, body{
+  height: 100%;
+}
   /* Contenedor principal */
   .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: auto;
     font-family: "Lato", sans-serif;
     font-size: 16px;
@@ -17,10 +23,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 30%;
-    width: 100%;
     padding: 30px 80px 10px;
-    position: relative;
     box-sizing: border-box;
     color: #000000;
   }
@@ -60,155 +63,75 @@
     padding: 20px;
   }
   
+  /*main*/
   .content {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    position: relative;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    Overflow:hidden;
-   
+    overflow:hidden;
   }
   
-  /*Form contiene las secciones del cuestionario */
-  .content__tarjeta {
-    display: flex;
-    flex-direction: row; /*Para que las tarjetas figuren horizontalmente */
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  /*Secciones*/
-  .tarjeta__cuestionario {
-    height: 470px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #e5e2e2;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    flex-basis: 25%; /*Para que entren las 3 tarjetas y los botones abajo*/
-    justify-content: space-between;
-  }
-  
-  .tarjeta__image {
-    max-width: 100%;
-    height: 60%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  
-  .tarjeta__pregunta {
-    padding: 10px 0;
-  }
-  
-  .tarjeta__alternativa {
-    padding: 5px 0;
-  }
-  
-  
-  .tarjeta__input {
-    margin-right: 10px;
-  }
-  
-  .tarjeta__resultado {
-    gap: 20px;
-    color: #7e6aac;
-    font-weight: bold;
-    padding: 5 10px;
-  }
-  
-  /*Contenedor de botones*/
-  .cuestionario__buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  .category__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
     gap: 50px;
+    width: 90%;
+    padding: 20px;
   }
-  
-  .cuestionario__button {
-    height: 60px;
-    margin-bottom: 32px;
-    background-color: #b695c0;
-    color: black;
-    width: 270px;
-    border-radius: 4px;
-    opacity: 1;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 20px;
-    cursor: pointer;
-  }
-  
-  .cuestionario__button:hover {
-    opacity: 0.7;
-  }
-  
-  .cuestionario__reset {
-    height: 60px;
-    margin-bottom: 32px;
-    background-color: black;
-    color: white;
-    width: 270px;
-    border-radius: 4px;
-    opacity: 1;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 20px;
-    cursor: pointer;
-  }
-  
-  .cuestionario__reset:hover {
-    opacity: 0.7;
-  }
-  
-  /* Contenedor de resultado de aciertos (vista 2) */
-  .cuestionario__resultado {
-    padding: 20px 0;
-    margin: 0;
-    font-size: 30px;
-    font-style: italic;
-    background-color: #333333;
-    color: white;
+
+  .category__card{
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    height: 100%;
-  }
-  
-  .resultado__title {
+    height: auto;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
-  
-  .resultado__conteo {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+
+  .category__card.kdrama{
+    background-image: url(https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/category_kdrama.jpg?v=1715358196090);
   }
-  
+
+  .category__card.kpop{
+    background-image: url(https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/category_kpop.webp?v=1715358187767);
+  }
+
+  .category__card.kfood{
+    background-image: url(https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/category_kfood.jpg?v=1715358191494);
+  }
+
+  .category__card.random{
+    background-image: url(https://cdn.glitch.global/c5e872d1-ff8b-4bbd-8176-93c13a2240da/category_random.jpg?v=1715359845148);
+  }
+  .category__title{
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    margin: 20px;
+  }
+
   .footer {
+    margin-top: auto;
     color: #000000;
     box-sizing: border-box;
-    margin: 0;
-    overflow: hidden;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
     background: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   }
   
   .footer__copyright {
     margin: 0;
-    padding-top: 18px;
-    padding-bottom: 20px;
     display: flex;
-    flex-basis: 1000px; /*permite establecer la dimensión de un elemento a lo largo del eje principal en píxeles.*/
     justify-content: center;
-    position: relative;
-    min-height: 10%;
   }

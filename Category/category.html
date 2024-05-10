@@ -28,20 +28,20 @@
       </header>
       <!--Contenedor de categorías-->
       <main class="content">
-        <section class="content__tarjeta">
-          <h2 class="tarjeta__titulo">Categorías</h2>
-          <div class="tarjeta__categorias">
-            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
-              K-Dramas
-            </button>
-            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
-              K-Pop
-            </button>
-            <button class="tarjeta__boton" onclick="location.href='../Trivia/trivia.html'">
-              Cultura Coreana
-            </button>
+        <div class="category__container">
+          <div class="category__card kdrama" onclick="location.href='../Trivia/trivia.html'">
+            <span class="category__title">K-Dramas</span>
           </div>
-        </section>
+          <div class="category__card kpop" onclick="location.href='../Trivia/trivia.html'">
+            <span class="category__title">K-Pop</span>
+          </div>
+          <div class="category__card kfood" onclick="location.href='../Trivia/trivia.html'">
+            <span class="category__title">K-Food</span>
+          </div>
+          <div class="category__card random" onclick="location.href='../Trivia/trivia.html'">
+            <span class="category__title">Random</span>
+          </div>
+        </div>
       </main>
       <!--Fin Contenedor de la trivia-->
       <!--Footer-->
